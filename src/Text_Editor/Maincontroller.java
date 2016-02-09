@@ -15,13 +15,20 @@ import java.io.IOException;
 public class Maincontroller extends Application {
     @FXML
     public TextArea ta;
-
     public static void main(String[] args) {
         launch(args);
     }
     public void newfi()throws IOException{
         Controller.rs = ta.getText();
         Controller.newf();
+    }
+    public void about() throws IOException{
+        Parent root =  FXMLLoader.load(getClass().getResource("about.fxml"));
+        Stage abt = new Stage();
+        abt.setTitle("About");
+        Scene sc = new Scene(root,250,230);
+        abt.setScene(sc);
+        abt.show();
     }
 
     @Override
