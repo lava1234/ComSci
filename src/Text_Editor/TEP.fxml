@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Text_Editor.Controller">
+   <children>
+      <StackPane prefHeight="28.0" prefWidth="600.0">
+         <children>
+            <ToolBar prefHeight="49.0" prefWidth="600.0">
+              <items>
+                  <Button mnemonicParsing="false" text="File" />
+                <Button mnemonicParsing="false" onAction="#newf" text="Save as..." />
+                  <Button mnemonicParsing="false" text="Help" />
+              </items>
+            </ToolBar>
+         </children>
+      </StackPane>
+      <TextArea id="ta" fx:id="ta" layoutX="16.0" layoutY="38.0" prefHeight="348.0" prefWidth="569.0" promptText="Write something!" />
+   </children>
+</AnchorPane>
