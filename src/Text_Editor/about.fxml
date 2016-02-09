@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="219.0" prefWidth="252.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="14.0" layoutY="26.0" text="Java Text Editor©" />
+      <Label layoutX="14.0" layoutY="52.0" text="This is a simple Java notepad application" />
+      <Label layoutX="14.0" layoutY="87.0" text="Coder: Udeshya Gurung" />
+      <Label layoutX="14.0" layoutY="110.0" text="Assisted Coder: Daniel Stone" />
+      <Label layoutX="14.0" layoutY="139.0" text="FAQ:" />
+      <Label layoutX="13.0" layoutY="165.0" text="What does the .jna file estension stand for?" />
+      <Label layoutX="13.0" layoutY="182.0" text="It stands for Java Notepad Application" />
+   </children>
+</AnchorPane>
