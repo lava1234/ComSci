@@ -10,9 +10,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import java.lang.Object.*;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 
 public class Maincontroller extends Application {
     @FXML
@@ -41,7 +43,34 @@ public class Maincontroller extends Application {
                 new FileChooser.ExtensionFilter("JNA", "*.jna")
         );
         File text = fileChooser.showOpenDialog(stage);
-        System.out.print(text);
+
+
+        String fileName = FileUtils.readFileToString(file);
+        String line = null;
+
+        try {
+            FileReader fileReader =
+                    new FileReader(fileName);
+
+            BufferedReader bufferedReader =
+                    new BufferedReader(fileReader);
+
+            while((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+            }
+            bufferedReader.close();
+        }
+        catch(FileNotFoundException ex) {
+            System.out.println(
+                    "Unable to open file '" +
+                            fileName + "'");
+        }
+        catch(IOException ex) {
+            System.out.println(
+                    "Error reading file '"
+                            + fileName + "'");
+        }
+
     }
 
     @Override
