@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Text_Editor.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Text_Editor.Maincontroller">
    <children>
       <StackPane prefHeight="28.0" prefWidth="600.0">
          <children>
             <ToolBar prefHeight="49.0" prefWidth="600.0">
               <items>
-                  <Button mnemonicParsing="false" text="File" />
-                <Button mnemonicParsing="false" onAction="#newf" text="Save as..." />
-                  <Button mnemonicParsing="false" text="Help" />
+                  <MenuButton mnemonicParsing="false" text="File">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#choose" text="Open" />
+                    </items>
+                  </MenuButton>
+                <Button mnemonicParsing="false" onAction="#newfi" text="Save as..." />
+                  <Button mnemonicParsing="false" onAction="#about" text="About" />
               </items>
             </ToolBar>
          </children>
