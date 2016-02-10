@@ -8,8 +8,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 public class Maincontroller extends Application {
@@ -29,6 +31,17 @@ public class Maincontroller extends Application {
         Scene sc = new Scene(root,250,230);
         abt.setScene(sc);
         abt.show();
+    }
+    public void choose(){
+        Stage stage = new Stage();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Resource File");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("All Files", "*.*"),
+                new FileChooser.ExtensionFilter("JNA", "*.jna")
+        );
+        File text = fileChooser.showOpenDialog(stage);
+        System.out.print(text);
     }
 
     @Override
