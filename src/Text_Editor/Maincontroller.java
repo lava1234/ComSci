@@ -3,6 +3,7 @@ package Text_Editor;/**
  */
 
 import javafx.application.Application;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,10 +11,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+
+import javax.imageio.ImageIO;
 import java.lang.Object.*;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.FileStore;
 import java.nio.file.Files;
 
 public class Maincontroller extends Application {
@@ -22,15 +26,11 @@ public class Maincontroller extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    public void newfi()throws IOException{
-        Controller.rs = ta.getText();
-        Controller.newf();
-    }
     public void about() throws IOException{
         Parent root =  FXMLLoader.load(getClass().getResource("about.fxml"));
         Stage abt = new Stage();
         abt.setTitle("About");
-        Scene sc = new Scene(root,250,230);
+        Scene sc = new Scene(root);
         abt.setScene(sc);
         abt.show();
     }
@@ -39,37 +39,22 @@ public class Maincontroller extends Application {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("All Files", "*.*"),
-                new FileChooser.ExtensionFilter("JNA", "*.jna")
+                new FileChooser.ExtensionFilter("JNA", "*.jna"),
+                new FileChooser.ExtensionFilter("All Files", "*.*")
         );
         File text = fileChooser.showOpenDialog(stage);
 
+    }
 
-        String fileName = FileUtils.readFileToString(file);
-        String line = null;
 
-        try {
-            FileReader fileReader =
-                    new FileReader(fileName);
+    public void save() throws IOException{
+        Stage stage = new Stage();
+        FileChooser fc = new FileChooser();
+        fc.setTitle("Save file");
+        fc.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("JNA", "*.jna")
+        );
 
-            BufferedReader bufferedReader =
-                    new BufferedReader(fileReader);
-
-            while((line = bufferedReader.readLine()) != null) {
-                System.out.println(line);
-            }
-            bufferedReader.close();
-        }
-        catch(FileNotFoundException ex) {
-            System.out.println(
-                    "Unable to open file '" +
-                            fileName + "'");
-        }
-        catch(IOException ex) {
-            System.out.println(
-                    "Error reading file '"
-                            + fileName + "'");
-        }
 
     }
 
