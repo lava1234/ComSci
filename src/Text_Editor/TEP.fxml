@@ -19,7 +19,7 @@
                       <MenuItem mnemonicParsing="false" onAction="#choose" text="Open" />
                     </items>
                   </MenuButton>
-                <Button mnemonicParsing="false" onAction="#newfi" text="Save as..." />
+                <Button mnemonicParsing="false" onAction="#save" text="Save as..." />
                   <Button mnemonicParsing="false" onAction="#about" text="About" />
               </items>
             </ToolBar>
