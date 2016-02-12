@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.apache.commons.io.FileUtils;
 
 import javax.imageio.ImageIO;
 import java.lang.Object.*;
@@ -34,7 +35,7 @@ public class Maincontroller extends Application {
         abt.setScene(sc);
         abt.show();
     }
-    public void choose(){
+    public void choose() throws IOException{
         Stage stage = new Stage();
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Resource File");
@@ -43,6 +44,9 @@ public class Maincontroller extends Application {
                 new FileChooser.ExtensionFilter("All Files", "*.*")
         );
         File text = fileChooser.showOpenDialog(stage);
+        String str = FileUtils.readFileToString(text);
+        ta.setText(str);
+
 
     }
 
@@ -54,6 +58,14 @@ public class Maincontroller extends Application {
         fc.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("JNA", "*.jna")
         );
+        File f = fc.showSaveDialog(stage);
+        if (!f.exists()) {
+            f.createNewFile();
+        }
+        FileWriter fw = new FileWriter(f.getAbsoluteFile());
+        BufferedWriter bw = new BufferedWriter(fw);
+        bw.write(ta.getText());
+        bw.close();
 
 
     }
