@@ -1,3 +1,4 @@
 # ComSci
-<p>This is where i do my Computer Science <b>GCSE</b> Work</p>
-<p>Right now I am working on a Browser!</p>
+This is where i do my Computer Science **GCSE** Work
+
+Right now I am working on a Browser!
