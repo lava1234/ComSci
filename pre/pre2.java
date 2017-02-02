@@ -99,7 +99,7 @@ public class pre2 {
             }
             sum = length + width + height;
             if (sum > 200) {
-                System.out.println("That he sum of all the dimensions is too big");
+                System.out.println("The sum of all the dimensions is too big");
                 fail = true;
             }
             if (fail) {
